@@ -2,8 +2,6 @@
 
 set -ouex pipefail
 
-chmod +x /ctx/cleanup.sh
-
 dnf downgrade -y mt7xxx-firmware-20250311-1.fc42
 
 mv /opt{,.bak} && mkdir /opt
@@ -37,4 +35,4 @@ EOF
 dnf5 install --setopt=install_weak_deps=False -y code
 sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/vscode.repo"
 
-/ctx/cleanup.sh
+bash /ctx/cleanup.sh
