@@ -4,6 +4,8 @@ set -ouex pipefail
 
 dnf downgrade -y mt7xxx-firmware-20250311-1.fc42
 
+mkdir -p /var/opt
+
 dnf5 install --setopt=install_weak_deps=False -y --enablerepo="google-chrome" google-chrome-stable
 dnf5 -y copr disable google-chrome
 
