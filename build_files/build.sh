@@ -22,7 +22,7 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
 dnf5 install --setopt=install_weak_deps=False -y code
-dnf5 -y copr disable vscode
+sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/vscode.repo"
 
 bash /ctx/fix-opt.sh
 bash /ctx/cleanup.sh
