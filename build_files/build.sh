@@ -24,5 +24,5 @@ EOF
 dnf5 install --setopt=install_weak_deps=False -y code
 sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/vscode.repo"
 
-bash /ctx/fix-opt.sh
-bash /ctx/cleanup.sh
+/ctx/fix-opt.sh
+/ctx/cleanup.sh
