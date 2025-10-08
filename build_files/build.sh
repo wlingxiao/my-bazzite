@@ -7,7 +7,7 @@ dnf downgrade -y mt7xxx-firmware-20250311-1.fc42
 mkdir -p /var/opt
 
 dnf5 install --setopt=install_weak_deps=False -y --enablerepo="google-chrome" google-chrome-stable
-sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/{$repo}.repo"
+sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/google-chrome.repo"
 
 dnf5 install -y https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.2/Clash.Verge-2.4.2-1.x86_64.rpm
 
