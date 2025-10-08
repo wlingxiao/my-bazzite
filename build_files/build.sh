@@ -2,8 +2,6 @@
 
 set -ouex pipefail
 
-chmod +x /ctx/github-release-install.sh
-
 chmod +x /ctx/cleanup.sh
 
 dnf downgrade -y mt7xxx-firmware-20250311-1.fc42
