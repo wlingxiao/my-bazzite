@@ -12,6 +12,7 @@ sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/google-chrome.repo"
 
 /ctx/github-release-install.sh clash-verge-rev/clash-verge-rev x86_64
 /ctx/github-release-install.sh Automattic/simplenote-electron x86_64
+/ctx/github-release-install.sh xishang0128/sparkle x86_64
 
 # VSCode
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
