@@ -14,6 +14,13 @@ sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/google-chrome.repo"
 /ctx/github-release-install.sh Automattic/simplenote-electron x86_64
 /ctx/github-release-install.sh xishang0128/sparkle x86_64
 
+dnf5 install --setopt=install_weak_deps=False -y mpv \
+    vlc-plugin-bittorrent \
+    vlc-plugin-ffmpeg \
+    vlc-plugin-kde \
+    vlc-plugin-pause-click \
+    vlc
+
 # VSCode
 tee /etc/yum.repos.d/vscode.repo <<'EOF'
 [code]
