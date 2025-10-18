@@ -49,5 +49,7 @@ sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/resilio-sync.repo"
 # https://aur.archlinux.org/cgit/aur.git/tree/rslsync_user.service?h=rslsync
 sed -i 's@WantedBy=multi-user.target@WantedBy=default.target@g' "/usr/lib/systemd/user/resilio-sync.service"
 
+dnf5 copr enable jdxcode/mise && dnf5 install mise
+
 /ctx/fix-opt.sh
 /ctx/cleanup.sh
