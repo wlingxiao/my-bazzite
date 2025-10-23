@@ -7,6 +7,25 @@ dnf downgrade -y mt7xxx-firmware-20250311-1.fc42
 mkdir -p /var/opt
 
 dnf5 install --setopt=install_weak_deps=False -y --enablerepo="google-chrome" google-chrome-stable
+
+# https://aur.archlinux.org/cgit/aur.git/tree/google-chrome-stable.sh?h=google-chrome
+mv /usr/bin/google-chrome-stable /usr/bin/google-chrome-stable-old
+tee /usr/bin/google-chrome-stable << 'EOF'
+#!/bin/bash
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
+
+# Allow users to override command-line options
+if [[ -f $XDG_CONFIG_HOME/chrome-flags.conf ]]; then
+    CHROME_USER_FLAGS="$(grep -v '^#' $XDG_CONFIG_HOME/chrome-flags.conf)"
+fi
+
+# Launch
+exec /usr/bin/google-chrome-stable-old $CHROME_USER_FLAGS "$@"
+EOF
+
+chmod +x /usr/bin/google-chrome-stable
+
 rm -rf /etc/cron.daily
 sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/google-chrome.repo"
 
