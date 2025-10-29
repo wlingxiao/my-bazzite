@@ -2,8 +2,8 @@
 FROM scratch AS ctx
 COPY build_files /
 
-# https://github.com/ublue-os/bazzite/pkgs/container/bazzite/533271084?tag=stable-42.20251002
-FROM ghcr.io/ublue-os/bazzite:stable-43.20251028@sha256:948e826f332117c459390792dff651b64c55babe281b0d73ffd58673d17573ae
+# https://github.com/ublue-os/bazzite/issues/3324
+FROM ghcr.io/ublue-os/bazzite:stable-42.20251002@sha256:f01ab84f7bdfb4612eae39f59b933d6dee15f367229079a335ee2bb84bb89580
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
