@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-dnf upgrade -y mt7xxx-firmware-20251021-1.fc43
+dnf downgrade -y mt7xxx-firmware-20250311-1.fc43
 
 mkdir -p /var/opt
 
