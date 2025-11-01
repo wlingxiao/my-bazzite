@@ -2,6 +2,8 @@
 
 set -ouex pipefail
 
+dnf repoquery -l mt7xxx-firmware | grep '7925'
+
 dnf downgrade -y mt7xxx-firmware-20250311-1.fc43
 
 mkdir -p /var/opt
