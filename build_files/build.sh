@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-dnf5 downgrade -y mt7xxx-firmware-20250311-1.fc42
+dnf5 downgrade -y https://kojipkgs.fedoraproject.org//packages/linux-firmware/20250311/1.fc43/noarch/mt7xxx-firmware-20250311-1.fc43.noarch.rpm
 
 mkdir -p /var/opt
 
