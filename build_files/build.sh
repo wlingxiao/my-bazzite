@@ -6,9 +6,9 @@ dnf5 downgrade -y https://kojipkgs.fedoraproject.org//packages/linux-firmware/20
 
 mkdir -p /var/opt
 
-dnf5 install --setopt=install_weak_deps=False -y --enablerepo="google-chrome" google-chrome-stable
-rm -rf /etc/cron.daily
-sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/google-chrome.repo"
+# dnf5 install --setopt=install_weak_deps=False -y --enablerepo="google-chrome" google-chrome-stable
+# rm -rf /etc/cron.daily
+# sed -i 's@enabled=1@enabled=0@g' "/etc/yum.repos.d/google-chrome.repo"
 
 # /ctx/github-release-install.sh clash-verge-rev/clash-verge-rev x86_64
 /ctx/github-release-install.sh Automattic/simplenote-electron x86_64
